@@ -1,1 +1,257 @@
+<!DOCTYPE HTML>
 
+<html>
+
+    <head lang="en">
+
+        <title>Calculator</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./apple-touch-icon.png">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+        <style>
+
+            *{
+
+                align-item: center;
+
+                text-align: center;
+
+                font-family: "Lucida Console", "Courier New", Monospace;
+
+            }
+
+            body{
+
+                background-color: #D1F2FF;
+
+            }
+
+            .div{
+
+                position:relative;
+
+            }
+
+            .num{
+
+                background-color: #FFE0E0;
+
+                border-radius: 25px;
+
+                padding: 20px 40px;
+
+                font-size: 40px;
+
+                margin:5px;
+
+                border:2px solid black;
+
+                box-shadow: 2px 2px 4px #ff8080;
+
+            }
+
+            input{
+
+                background-color: #ffffff;
+
+                border-radius: 25px;
+
+                height:90px;
+
+                max-width:360px;
+
+                font-size: 40px;
+
+                text-align: right;
+
+                border:2px solid black;
+
+                box-shadow: 2px 2px 4px #bfbfbf;
+
+            }
+
+            .material-symbols-outlined {
+
+              font-variation-settings:
+
+                'FILL' 0,
+
+                'wght' 400,
+
+                'GRAD' 0,
+
+                'opsz' 48
+
+            }
+
+            .op{
+
+                background-color: #EBB1FF;
+
+                border-radius: 25px;
+
+                padding: 20px 40px;
+
+                font-size: 40px;
+
+                margin:5px;
+
+                border:2px solid black;
+
+                box-shadow: 2px 2px 4px #d24dff;
+
+            }
+
+            .img{
+
+                position:absolute;
+
+                top:50%;
+
+                right:50%;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <img src="Calculus.png" alt="logo"/>
+
+        <div style="color:#D1F2FF;width:100%;height:100%;">
+
+        <input id="text" type="text" readonly/>
+
+        <button onclick="del()" class="op">
+
+            <span class="material-symbols-outlined">
+
+            delete
+
+            </span>
+
+        </button>
+
+        <br />
+
+        <button onclick="show(1)"class="num">1</button>
+
+        <button onclick="show(2)"class="num">2</button>
+
+        <button onclick="show(3)"class="num">3</button>
+
+        <button onclick="show('+')"class="op">+</button>
+
+        <br />
+
+        <button onclick="show(4)"class="num">4</button>
+
+        <button onclick="show(5)"class="num">5</button>
+
+        <button onclick="show(6)"class="num">6</button>
+
+        <button onclick="show('-')"class="op">-</button>
+
+        <br />
+
+        <button onclick="show(7)"class="num">7</button>
+
+        <button onclick="show(8)"class="num">8</button>
+
+        <button onclick="show(9)"class="num">9</button>
+
+        <button onclick="show('*')"class="op">*</button>
+
+        <br />
+
+        <button onclick="ans()"class="op">=</button>
+
+        <button onclick="show(0)"class="num">0</button>
+
+        <button onclick="show('/')"class="op">/</button>
+
+        <button onclick="backspace()"class="op">
+
+            <span class="material-symbols-outlined">
+
+                backspace
+
+            </span>
+
+        </button>
+
+        <br>
+
+        <button onclick="sup2()"class="op">²</button>
+
+        <button onclick="percent()"class="op">%</button>
+
+        <button onclick="show('.')" class="op">.</button>
+
+        </div>
+
+        <script>
+
+            audio = new Audio("https://www.fesliyanstudios.com/play-mp3/10");
+
+            input=document.getElementById("text");
+
+		    function show(val) {
+
+			    input.value+=val
+
+                audio.play()
+
+		    }
+
+		    function del() {
+
+		        input.value=""
+
+                audio.play()
+
+		    }
+
+		    function ans() {
+
+		        input.value=eval(input.value)
+
+                audio.play()
+
+		    }
+
+            function backspace(){
+
+                input.value=input.value.substring(0,input.value.length -1);
+
+                audio.play()
+
+            }
+
+            function sup2(){
+
+                input.value=input.value*input.value
+
+                audio.play()
+
+            }
+
+            function percent(){
+
+                input.value=(input.value)*100+"%"
+
+            }
+
+        </script>
+
+    </body>
+
+</html>
